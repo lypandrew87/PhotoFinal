@@ -37,25 +37,21 @@ function rotateBackgroundImage(){
     "../assets/header-background11.jpg",
     "../assets/header-background12.jpg"
   ]
-  images.forEach(function(img){
-    new Image().src = img; 
-
 
   var imageHead = document.getElementById("id");
   
   const cycleImages = (images, container, step) => {
     images.forEach((image, index) => (
     setTimeout(() => {
-        container.style.backgroundImage
         container.style.backgroundImage = `url(${image})` 
-        container.style.background
     }, step * (index + 1))
   ))
   setTimeout(() => cycleImages(images, container, step), step * images.length)
 }
 
-cycleImages(images, imageHead, 9000)
+cycleImages(images, imageHead, 9000);
 }
+
 
 function parallaxIcon() {
   $(window).scroll(function () {
