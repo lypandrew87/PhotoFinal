@@ -43,6 +43,7 @@ function rotateBackgroundImage(){
   const cycleImages = (images, container, step) => {
     images.forEach((image, index) => (
     setTimeout(() => {
+      container.style.backgroundImage.
         container.style.backgroundImage = `url(${image})` 
     }, step * (index + 1))
   ))
