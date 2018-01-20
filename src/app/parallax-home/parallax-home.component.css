@@ -1,0 +1,17 @@
+body{
+    height: 30em; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    background-image: url("../../assets/header-background11.jpg")
+  }
+
+  .letters{
+    font-size: 75px; 
+    position: relative;
+    padding-top: 15%;
+     color: #FFFFFF;
+     text-align: center;
+     font-family: Pinyon Script, Arial,Helvetica,sans-serifs; 
+  }
