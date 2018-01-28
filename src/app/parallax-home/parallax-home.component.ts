@@ -11,6 +11,7 @@ export class ParallaxHomeComponent implements OnInit {
   
   @Input() public backgroundUrl: string;
   @Input() public title : string;
+  
   constructor() { }
 
   ngOnInit() {
