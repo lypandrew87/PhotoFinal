@@ -15,7 +15,9 @@ import { VideoHeaderComponent } from './video-header/video-header.component';
 import { PhotoHeaderComponent } from './photo-header/photo-header.component';
 import { ServiceOptionsComponent } from './service-options/service-options.component';
 import { ParallaxHomeComponent } from './parallax-home/parallax-home.component';
-import { FollowMeComponent } from './follow-me/follow-me.component'; 
+import { FollowMeComponent } from './follow-me/follow-me.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component'; 
 
 const appRoutes: Routes = [
   {path: 'Pricing', component: PricingComponent},
@@ -37,7 +39,9 @@ const appRoutes: Routes = [
     PhotoHeaderComponent,
     ServiceOptionsComponent,
     ParallaxHomeComponent,
-    FollowMeComponent,    
+    FollowMeComponent,
+    PortfolioComponent,
+    TestimonialsComponent,    
   ],
   imports: [
     BrowserModule,
