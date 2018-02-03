@@ -17,13 +17,15 @@ import { ServiceOptionsComponent } from './service-options/service-options.compo
 import { ParallaxHomeComponent } from './parallax-home/parallax-home.component';
 import { FollowMeComponent } from './follow-me/follow-me.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component'; 
+import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { GalleryComponent } from './gallery/gallery.component'; 
 
 const appRoutes: Routes = [
   {path: 'Pricing', component: PricingComponent},
   {path:'Home', component: HomeComponent},
   {path:'', component: HomeComponent},
-  {path:'Blog', component: BlogComponent}
+  {path:'Blog', component: BlogComponent},
+  {path:'Portfolio', component: GalleryComponent}
 ]
 
 @NgModule({
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     ParallaxHomeComponent,
     FollowMeComponent,
     PortfolioComponent,
-    TestimonialsComponent,    
+    TestimonialsComponent,
+    GalleryComponent,    
   ],
   imports: [
     BrowserModule,
