@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-parallax-home',
@@ -15,6 +16,10 @@ export class ParallaxHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $( document ).ready(function() {
+    if($(window).width() < 460){
+      $(".body").css('background-attachment', 'scroll');
+    }
+  } );
   }
-
 }

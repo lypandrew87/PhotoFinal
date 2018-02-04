@@ -23,6 +23,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 const appRoutes: Routes = [
   {path: 'Pricing', component: PricingComponent},
   {path:'Home', component: HomeComponent},
+  {path:'', component: HomeComponent},
   {path:'Blog', component: BlogComponent},
   {path:'Portfolio', component: GalleryComponent}
 ]
