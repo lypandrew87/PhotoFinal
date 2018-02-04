@@ -1,16 +1,37 @@
 <a id="Contact"></a>
     <div class="container">
   <h1>Contact Me</h1>
-
+  <!-- https://www.w3schools.com/bootstrap/bootstrap_forms_sizing.asp -->
   <div class="row">
           <div class="col-md-6">
-                  <input placeholder="Name" type="text" name="name"><br> <br>
-                  <input placeholder="Email" type="text" ><br><br>
-                  <textarea placeholder = "Notes" cols="30" rows="10" type="textbox"></textarea><br>
+            <div class="contact">
+                <div class="form-group">
+                    <label for="inputdefault">Name:</label>
+                    <input class="form-control" id="inputdefault" type="text">
+                  </div>
+                  <div class="form-group">
+                      <label for="inputdefault">Email:</label>
+                      <input class="form-control" id="inputdefault" type="text">
+                    </div>
+                  <div class="dropdown">
+                      <label for="sel1">Type of Shoot:</label>
+                      <select class="form-control" id="sel1">
+                          <option>Other</option>
+                        <option>Wedding</option>
+                        <option>Engagement</option>
+                        <option>Couple</option>
+                      </select>
+                        <br>
+                        <label for="inputdefault">Message:</label>
+<br>
+                  <textarea  cols="30" rows="10" type="textbox"></textarea><br>
                   <button class="btn btn-success btn btn-default btn-lg dropdown-toggle" type="button">
                         Submit 
                       </button>
                 </div>
+                
+            </div>
+              
           <div class="col-md-6">
           </div>
   </div>
