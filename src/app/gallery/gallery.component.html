@@ -1,4 +1,4 @@
-    <app-nav-bar></app-nav-bar>
+   <app-nav-bar></app-nav-bar>
     <div class="container">
         <h1>Portfolio</h1>
 
@@ -7,18 +7,28 @@
 
             
           <div *ngFor="let num of column1">        
-            <img class="well" style = "width: 100%" src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
+            <img  class="well" style = "width: 100%" src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
           </div>
           </div>
         <div class="col-md-4">
             <div *ngFor="let num of column2">  
-            <img class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
+              
+            <img  class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
             </div>
         </div>
         <div class="col-md-4">
             <div *ngFor="let num of column3">  
-            <img class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
+            <img  class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
         </div>
         </div>
       </div>
-    </div>
+
+      <img class="click" id="myImg" src="https://www.w3schools.com/howto/img_fjords.jpg" alt="Trolltunga, Norway" width="500" height="300">
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+      </div>
+      
+       
+      
