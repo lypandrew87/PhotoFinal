@@ -19,6 +19,7 @@ import { FollowMeComponent } from './follow-me/follow-me.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { GalleryComponent } from './gallery/gallery.component'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   {path: 'Pricing', component: PricingComponent},
@@ -44,10 +45,11 @@ const appRoutes: Routes = [
     FollowMeComponent,
     PortfolioComponent,
     TestimonialsComponent,
-    GalleryComponent,    
+    GalleryComponent, 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,   
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(), 
     ModalModule.forRoot(),

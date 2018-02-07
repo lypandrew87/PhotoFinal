@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {trigger,state,style,animate, transition, keyframes} from '@angular/animations';
 
 declare var $: any;
 var modalImg;
@@ -8,19 +9,38 @@ var captionText;
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.css']
+  styleUrls: ['./gallery.component.css'],
+  animations: [
+    trigger('photoAnimation', [
+      
+      state('visible', style({
+        display:'block'
+      })),
+      state('invisible',   style({
+        transform:'scale(1.3)',
+        display:'none',
+        opacity: '0'
+      })),
+  
+      transition('visible => invisible', animate('300ms ease-out')),
+      transition('invisible => visible',  animate('300ms ease-in')),
+    ])
+  ]
 })
 
 export class GalleryComponent {
   weddingOpen = false;
   coupleOpen = false;
-  wedColumn1 = [];
-  wedColumn2 = [];
-  wedColumn3 = [];
+  stateWed = 'invisible'; 
+  stateCouple = 'invisible'; 
 
-  coupleColumn1 = [];
-  coupleColumn2 = [];
-  coupleColumn3 = [];
+  wedColumn1 = ['1', '2', '3', '4', '5'];
+  wedColumn2 = ['6', '7', '8', '9'];
+  wedColumn3 = ['10', '12', '13', '14'];
+
+  coupleColumn1 = ['1', '2', '3'];
+  coupleColumn2 = ['4', '5', '6'];
+  coupleColumn3 = ['7', '8', '9'];
 
   ngOnInit() {
 
@@ -43,52 +63,10 @@ export class GalleryComponent {
   }
 
   displayCouple() {
-    if (this.coupleOpen == false) {
-      this.openCouple();
-
-      if (this.weddingOpen == true) {
-        this.closeWedding();
-      }
-    } else {
-      this.closeCouple();
-    }
-  }
+    this.stateCouple = (this.stateCouple == 'invisible' ? 'visible': 'invisible');
+   }
 
   displayWedding() {
-    if (this.weddingOpen == false) {
-      this.openWedding();
-      if (this.coupleOpen == true) {
-        this.closeCouple();
-      }
-    } else {
-      this.closeWedding();
-    }
+    this.stateWed = (this.stateWed == 'invisible' ? 'visible': 'invisible');
   }
-  //#region Helper Methods
-  openCouple() {
-    this.coupleColumn1 = ['1', '2', '3'];
-    this.coupleColumn2 = ['4', '5', '6'];
-    this.coupleColumn3 = ['7', '8', '9'];
-    this.coupleOpen = true;
-  }
-
-  closeCouple() {
-    this.coupleColumn1 = [];
-    this.coupleColumn2 = [];
-    this.coupleColumn3 = [];
-    this.coupleOpen = false;
-  }
-  openWedding() {
-    this.wedColumn1 = ['1', '2', '3', '4', '5'];
-    this.wedColumn2 = ['6', '7', '8', '9'];
-    this.wedColumn3 = ['10', '12', '13', '14'];
-    this.weddingOpen = true;
-  }
-  closeWedding() {
-    this.wedColumn1 = [];
-    this.wedColumn2 = [];
-    this.wedColumn3 = [];
-    this.weddingOpen = false;
-  }
-  //#endregion
 }
