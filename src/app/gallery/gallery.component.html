@@ -1,28 +1,45 @@
    <app-nav-bar></app-nav-bar>
     <div class="container">
         <h1>Portfolio</h1>
-
+      <button (click)="displayWedding()">Weddings</button>
+      <button (click)="displayCouple()">Couple</button>
+<!-- Weddings Section -->
       <div class="row">
         <div class="col-md-4">
-
-            
-          <div *ngFor="let num of column1">        
-            <img  class="well" style = "width: 100%" src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
+          <div *ngFor="let num of wedColumn1">        
+            <img (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
           </div>
           </div>
         <div class="col-md-4">
-            <div *ngFor="let num of column2">  
+            <div *ngFor="let num of wedColumn2">  
               
-            <img  class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
+            <img (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
             </div>
         </div>
         <div class="col-md-4">
-            <div *ngFor="let num of column3">  
-            <img  class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
+            <div *ngFor="let num of wedColumn3">  
+            <img (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
         </div>
         </div>
       </div>
-
+<!-- Couples Section -->
+      <div class="row">
+        <div class="col-md-4">
+          <div *ngFor="let num of coupleColumn1">        
+            <img (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/couples/couple{{num}}.jpg" alt="About Me Headshot">
+          </div>
+          </div>
+        <div class="col-md-4">
+            <div *ngFor="let num of coupleColumn2">  
+            <img (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/couples/couple{{num}}.jpg" alt="About Me Headshot">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div *ngFor="let num of coupleColumn3">  
+            <img (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/couples/couple{{num}}.jpg" alt="About Me Headshot">
+        </div>
+        </div>
+      </div>
       <!-- The Modal -->
       <div id="myModal" class="modal">
         <img class="modal-content" id="img01">

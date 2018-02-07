@@ -9,7 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
   constructor(router: Router) {
-    
+    //Allows anchors to work throughout the website
         router.events.subscribe(s => {
           if (s instanceof NavigationEnd) {
             const tree = router.parseUrl(router.url);

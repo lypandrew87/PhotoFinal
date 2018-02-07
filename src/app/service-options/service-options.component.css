@@ -1,6 +1,10 @@
-.navigation-row img{
-
-}
 .thumbnail{
     background-color:blue;
+}
+.well:hover{
+    opacity:0.5;
+};
+.well img{
+    max-width:15em;
+    height: auto;
 }
