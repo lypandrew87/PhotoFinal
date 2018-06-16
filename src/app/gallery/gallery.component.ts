@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger,state,style,animate, transition, keyframes} from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 
 declare var $: any;
 var modalImg;
 var modal;
 var captionText;
+
+interface PhotoUrl {
+  Url: string;
+  Category : string;
+}
 
 @Component({
   selector: 'app-gallery',
@@ -29,20 +37,43 @@ var captionText;
 })
 
 export class GalleryComponent {
-  weddingOpen = false;
+
+  constructor(private http: HttpClient){
+  }
+
+  coupleUrls : String[] = [];
+  weddingUrls : String[] = [];
+
   coupleOpen = false;
   stateWed = 'invisible'; 
   stateCouple = 'invisible'; 
 
-  wedColumn1 = ['1', '2', '3', '4', '5'];
-  wedColumn2 = ['6', '7', '8', '9'];
-  wedColumn3 = ['10', '12', '13', '14'];
-
-  coupleColumn1 = ['1', '2', '3'];
-  coupleColumn2 = ['4', '5', '6'];
-  coupleColumn3 = ['7', '8', '9'];
-
   ngOnInit() {
+
+
+    //get couple Urls
+    this.http.get('http://localhost:20951/PhotoUrl/couple').subscribe(data => {
+
+    console.log(data); 
+    let d : PhotoUrl;
+    
+    for(var i = 0; i<data.PhotoUrl.length; i++){
+      console.log(data.PhotoUrl[i].Url); 
+      this.coupleUrls.push(data.PhotoUrl[i].Url);
+    } 
+  });
+
+  //get wedding Urls
+  this.http.get('http://localhost:20951/PhotoUrl/wedding').subscribe(data => {
+    
+        console.log(data); 
+        let d : PhotoUrl;
+        
+        for(var i = 0; i<data.PhotoUrl.length; i++){
+          console.log(data.PhotoUrl[i].Url); 
+          this.weddingUrls.push(data.PhotoUrl[i].Url);
+        } 
+      });
 
     modal = document.getElementById('myModal');
 
@@ -64,9 +95,11 @@ export class GalleryComponent {
 
   displayCouple() {
     this.stateCouple = (this.stateCouple == 'invisible' ? 'visible': 'invisible');
+    this.stateWed = 'invisible'; 
    }
 
   displayWedding() {
     this.stateWed = (this.stateWed == 'invisible' ? 'visible': 'invisible');
+    this.stateCouple = 'invisible'; 
   }
 }

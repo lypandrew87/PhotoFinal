@@ -20,6 +20,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { GalleryComponent } from './gallery/gallery.component'; 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'; 
 
 const appRoutes: Routes = [
   {path: 'Pricing', component: PricingComponent},
@@ -49,13 +50,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,   
+    BrowserAnimationsModule,  
+    HttpClientModule, 
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(), 
     ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

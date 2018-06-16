@@ -4,42 +4,45 @@
       <button  (click)="displayWedding()">Weddings</button>
       <button  (click)="displayCouple()">Couple</button>
 <!-- Weddings Section -->
-      <div class="row">
-        <div class="col-md-4">
-          <div *ngFor="let num of wedColumn1">        
-            <img [@photoAnimation]='stateWed' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
-          </div>
-          </div>
-        <div class="col-md-4">
-            <div *ngFor="let num of wedColumn2">  
-              
-            <img [@photoAnimation]='stateWed' (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div *ngFor="let num of wedColumn3">  
-            <img [@photoAnimation]='stateWed' (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/weddings/wed{{num}}.jpg" alt="About Me Headshot">
-        </div>
-        </div>
+<div class="row" *ngFor="let url of weddingUrls; let i = index; " >
+    <div *ngIf="i%3==0" >
+    <div class="col-md-4">
+      <div >        
+        <img [@photoAnimation]='stateWed' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/{{weddingUrls[i]}}" alt="About Me Headshot">
       </div>
+    </div>
+  <div class="col-md-4" *ngIf="i+1<weddingUrls.length">
+    <div >        
+      <img [@photoAnimation]='stateWed' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/{{weddingUrls[i+1]}}" alt="About Me Headshot">
+    </div>
+  </div>
+<div class="col-md-4" *ngIf="i+2<weddingUrls.length" >
+  <div >        
+    <img [@photoAnimation]='stateWed' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/{{weddingUrls[i+2]}}" alt="About Me Headshot">
+  </div>
+</div>
+</div>
+</div>
 <!-- Couples Section -->
-      <div class="row">
+      <div class="row" *ngFor="let url of coupleUrls; let i = index; " >
+        <div *ngIf="i%3==0" >
         <div class="col-md-4">
-          <div *ngFor="let num of coupleColumn1">        
-            <img [@photoAnimation]='stateCouple' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/couples/couple{{num}}.jpg" alt="About Me Headshot">
+          <div >        
+            <img [@photoAnimation]='stateCouple' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/{{coupleUrls[i]}}" alt="About Me Headshot">
           </div>
-          </div>
-        <div class="col-md-4">
-            <div *ngFor="let num of coupleColumn2">  
-            <img [@photoAnimation]='stateCouple' (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/couples/couple{{num}}.jpg" alt="About Me Headshot">
-            </div>
         </div>
-        <div class="col-md-4">
-            <div *ngFor="let num of coupleColumn3">  
-            <img [@photoAnimation]='stateCouple' (click)="enlarge($event.currentTarget)" class="well"  style = "width: 100%"  src="../assets/couples/couple{{num}}.jpg" alt="About Me Headshot">
-        </div>
+      <div class="col-md-4" *ngIf="i+1<coupleUrls.length">
+        <div >        
+          <img [@photoAnimation]='stateCouple' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/{{coupleUrls[i+1]}}" alt="About Me Headshot">
         </div>
       </div>
+    <div class="col-md-4" *ngIf="i+2<coupleUrls.length" >
+      <div >        
+        <img [@photoAnimation]='stateCouple' (click)="enlarge($event.currentTarget)" class="well" style = "width: 100%" src="../assets/{{coupleUrls[i+2]}}" alt="About Me Headshot">
+      </div>
+    </div>
+  </div>
+  </div>
       <!-- The Modal -->
       <div id="myModal" class="modal">
         <img class="modal-content" id="img01">
